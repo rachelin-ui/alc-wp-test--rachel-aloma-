@@ -1,0 +1,29 @@
+---
+import { useState } from 'react';
+const [input, setInput] = useState('');
+const [response, setResponse] = useState('');
+---
+
+<html>
+  <head>
+    <title>Générateur AI</title>
+  </head>
+  <body>
+    <h1>Générateur AI</h1>
+    <form on:submit={async (e) => {
+      e.preventDefault();
+      const res = await fetch('/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: input })
+      });
+      const data = await res.json();
+      setResponse(data.result);
+    }}>
+      <input type="text" value={input} on:input={(e) => setInput(e.target.value)} placeholder="Pose ta question..." />
+      <button type="submit">Générer</button>
+    </form>
+
+    {response && <p>{response}</p>}
+  </body>
+</html>
