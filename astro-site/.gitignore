@@ -1,0 +1,19 @@
+# 🔐 Fichiers sensibles
+.env
+
+# 📦 Dépendances
+node_modules/
+
+# 🏗️ Fichiers de build
+dist/
+
+# ⚙️ Configs système ou IDE
+.DS_Store
+.vscode/
+.idea/
+
+# 📜 Logs
+*.log
+
+# 🚀 Déploiement Railway (si applicable)
+railway.json
