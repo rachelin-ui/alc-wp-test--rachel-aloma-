@@ -1,0 +1,14 @@
+---
+import Hero from '../components/Hero.astro';
+import QuoteWidget from '../components/QuoteWidget.tsx';
+---
+
+<html lang="fr">
+  <head>
+    <title>Page Astro</title>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <Hero />
+    <QuoteWidget client:visible />
+  </body>
+</html>
